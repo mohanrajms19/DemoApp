@@ -74,19 +74,18 @@
             },
             "routes": [
                 {
-                    "name": "login",
+                    "name": "View",
                     "pattern": "",
                     "target": [
-                        "Login"
+                        "View"
                     ]
                 }
             ],
             "targets": {
-                "Login": {
-                    "viewType": "XML",
-                    "transition": "fade",
-                    "viewId": "Login",
-                    "viewName": "view.Login"
+                "View": {
+                    
+                    "id": "View",
+                    "name": "view.View"
                 }
             }
         },
