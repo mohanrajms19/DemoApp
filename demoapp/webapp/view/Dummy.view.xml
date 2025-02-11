@@ -1,7 +1,0 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="demoapp.controller.Dummy">
-    <Page id="loginPage"  showHeader="false" showNavButton="true" navButtonPress="onNavBack">
-    <content>
-    
-    </content>
-    </Page>
-</mvc:View>

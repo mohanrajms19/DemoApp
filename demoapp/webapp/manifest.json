@@ -92,7 +92,7 @@
         "rootView": {
             "viewName": "demoapp.view.App",
             "type": "XML",
-            "id": "App"
+            "id": "app"
         }
     }
 }
