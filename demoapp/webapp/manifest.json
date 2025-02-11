@@ -70,28 +70,48 @@
                 "viewType": "XML",
                 "path": "demoapp.view",
                 "async": true,
-                "viewPath": "demoapp.view"
+                "viewPath": "demoapp.view",
+                "bypassed": {
+                    "target": "notFound"
+                 }
             },
             "routes": [
                 {
-                    "name": "View",
+                    "name": "Login",
                     "pattern": "",
                     "target": [
-                        "View"
+                        "Login"
                     ]
+                },
+                {
+                    "pattern": "employees",
+                    "name": "employeeList",
+                    "target": "employees"
                 }
             ],
             "targets": {
-                "View": {
-                    
-                    "id": "View",
-                    "name": "view.View"
-                }
+                "Login": {
+                    "level" :1,
+                    "id": "Login",
+                    "name": "Login"
+                },
+                "notFound": {
+                    "id": "notFound",
+                    "name": "NotFound",
+                    "transition": "show"
+                 },
+				"employees": {
+					"id": "employeeList",
+					"path": "demoapp.view.employee",
+					"name": "EmployeeList",
+					"level" : 2
+				}
             }
         },
         "rootView": {
             "viewName": "demoapp.view.App",
             "type": "XML",
+            "async": true,
             "id": "app"
         }
     }
