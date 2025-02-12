@@ -1,5 +1,5 @@
 sap.ui.define([
-    "sap/ui/demo/nav/controller/BaseController"
+    "demoapp/controller/BaseController"
  ], function (BaseController) {
     "use strict";
     return BaseController.extend("demoapp.controller.NotFound", {
