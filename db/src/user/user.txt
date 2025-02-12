@@ -1,0 +1,27 @@
+INSERT INTO "user" (
+    "id", 
+    "externalId", 
+    "firstName", 
+    "lastName", 
+    "mobile", 
+    "phone", 
+    "address", 
+    "createdBy", 
+    "createdOn", 
+    "updatedBy", 
+    "updatedOn", 
+    "status"
+) VALUES (
+    1, 
+    0, 
+    NULL, 
+    NULL, 
+    NULL, 
+    NULL, 
+    NULL, 
+    NULL, 
+    '2024-10-14', 
+    NULL, 
+    '2024-10-14', 
+    2
+);

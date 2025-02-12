@@ -1,0 +1,6 @@
+PROCEDURE "USER" (
+    
+) AS
+BEGIN
+SELECT * FROM "user";
+END;
