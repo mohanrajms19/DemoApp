@@ -85,7 +85,12 @@
                     "pattern": "employees",
                     "name": "employeeList",
                     "target": "employees"
-                }, 
+                },
+                {
+                    "pattern": "employees/overview:?query:",
+                    "name": "employeeOverview",
+                    "target": ["employeeOverviewTop", "employeeOverviewContent"]
+                },
                 {
                     "pattern": "employees/{employeeId}",
                     "name": "employee",
@@ -128,7 +133,7 @@
                 "resumeTabHobbies": {
 					"id": "resumeHobbies",
 					"parent": "employeeResume",
-					"path": "sap.ui.demo.nav.view.employee",
+					"path": "demoapp.view.employee",
 					"name": "ResumeHobbies",
 					"controlId": "hobbiesTab",
 					"controlAggregation": "content"
@@ -136,9 +141,31 @@
 				"resumeTabNotes": {
 					"id": "resumeNotes",
 					"parent": "employeeResume",
-					"path": "sap.ui.demo.nav.view.employee",
+					"path": "demoapp.view.employee",
 					"name": "ResumeNotes",
 					"controlId": "notesTab",
+					"controlAggregation": "content"
+				},
+				"employeeOverview": {
+					"id": "employeeOverview",
+					"path": "demoapp.view.employee.overview",
+					"name": "EmployeeOverview",
+					"level" : 2
+				},
+				"employeeOverviewTop": {
+					"id": "employeeOverviewTop",
+					"parent": "employeeOverview",
+					"path": "demoapp.view.employee.overview",
+					"name": "EmployeeOverviewTop",
+					"controlId": "EmployeeOverviewParent",
+					"controlAggregation": "content"
+				},
+				"employeeOverviewContent": {
+					"id": "employeeOverviewContent",
+					"parent": "employeeOverview",
+					"path": "demoapp.view.employee.overview",
+					"name": "EmployeeOverviewContent",
+					"controlId": "EmployeeOverviewParent",
 					"controlAggregation": "content"
 				}
             }
