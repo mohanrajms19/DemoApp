@@ -1,7 +1,7 @@
 package customer.demoapp.employee;
 
-import customer.demoapp.employee.Employee;
-import customer.demoapp.employee.EmployeeRepository;
+// import customer.demoapp.employee.Employee;
+// import customer.demoapp.employee.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

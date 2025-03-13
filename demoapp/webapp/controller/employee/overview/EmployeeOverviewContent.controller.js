@@ -137,6 +137,23 @@ sap.ui.define([
 			// Note: no input validation is implemented here
 			this._oVSD.setSelectedSortItem(sSortField);
 			this._oVSD.setSortDescending(bSortDescending);
+		},
+		fetchProjects: async function (id) {
+			try {
+				this.showLoading(true);
+				//var path = URLConstants.URL.manage_object_all;
+				var path = "/api/employees/{id}";
+				let response = await this.restMethodGet(path);
+				response.forEach(e => {
+					e.status_text = e.status == "1" ? "Active" : "Inactive"
+				});
+				this.getView().setModel(new JSONModel(response), "ManageObjectsMdl");
+				this.showLoading(false);
+			}
+			catch {
+				this.showLoading(false);
+			}
+
 		}
 
 	});

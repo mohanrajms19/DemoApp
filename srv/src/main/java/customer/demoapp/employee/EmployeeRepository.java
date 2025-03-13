@@ -1,6 +1,6 @@
 package customer.demoapp.employee;
 
-import customer.demoapp.employee.Employee;
+// import customer.demoapp.employee.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
