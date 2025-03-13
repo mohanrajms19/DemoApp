@@ -26,7 +26,7 @@ sap.ui.define([
 			this._aValidSortFields = ["EmployeeID", "FirstName", "LastName"];
 			this._sSearchQuery = null;
             this._oRouterArgs = null;
-
+			this.fetchProjects();
 			this._initViewSettingsDialog();
 
             // make the search bookmarkable
@@ -141,8 +141,8 @@ sap.ui.define([
 		fetchProjects: async function (id) {
 			try {
 				this.showLoading(true);
-				//var path = URLConstants.URL.manage_object_all;
-				var path = "/api/employees/{id}";
+				var path = URLConstants.URL.manage_object_all;
+				//var path = "http://localhost:8085/api/employees/{id}";
 				let response = await this.restMethodGet(path);
 				response.forEach(e => {
 					e.status_text = e.status == "1" ? "Active" : "Inactive"
@@ -155,7 +155,7 @@ sap.ui.define([
 			}
 
 		}
-
+		
 	});
 
 });

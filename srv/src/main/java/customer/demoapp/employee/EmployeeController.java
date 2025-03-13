@@ -16,14 +16,14 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping
+    @GetMapping(value = "/all-object")
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
 
     @GetMapping("/{id}")
-    public Optional<Employee> getEmployeeById(@PathVariable Long id) {
-        return employeeService.getEmployeeById(id);
+    public Optional<Employee> getEmployeeById(@PathVariable Long employeeId) {
+        return employeeService.getEmployeeById(employeeId);
     }
 
     @PostMapping

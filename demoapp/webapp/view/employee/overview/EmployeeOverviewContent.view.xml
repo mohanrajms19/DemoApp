@@ -6,7 +6,8 @@
 		items="{ManageObjectsMdl>/}">
 		<headerToolbar>
 			<Toolbar>
-				<Title text="{i18n>Employees}" level="H2"/>
+				<!-- <Title text="{i18n>Employees}" level="H2"/> -->
+				 <Label design="Bold" text="Items({= ${ManageObjectsMdl>/}.length})" />
 				<ToolbarSpacer />
 				<SearchField id="searchField" search=".onSearchEmployeesTable" width="50%"/>
 				<Button icon="sap-icon://sort" press=".onSortButtonPressed"/>
@@ -14,7 +15,7 @@
 		</headerToolbar>
 		<columns>
 			<Column id="employeeIDCol"><Text text="{i18n>EmployeeID}"/></Column>
-			<Column id="firstNameCol" demandPopin="true"><Text text="{i18n>FirstName}"/></Column>
+			<Column id="firstNameCol" demandPopin="true"><Text text="{i18n>formFirstName}"/></Column>
 			<Column id="lastNameCol" demandPopin="true"><Text text="{i18n>LastName}"/></Column>
 			<Column id="addressCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>Address}"/></Column>
 			<Column id="cityCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>City}"/></Column>
@@ -26,7 +27,7 @@
 		<items>
 			<ColumnListItem>
 				<cells>
-					<Text text="{EmployeeID}"/>
+					<Text text="{ManageObjectsMdl>EmployeeID}"/>
 					<Text text="{FirstName}"/>
 					<Text text="{LastName}"/>
 					<Text text="{Address}"/>
