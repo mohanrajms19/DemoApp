@@ -3,7 +3,7 @@ sap.ui.define([], function () {
   
     return {
       URL: {
-        app_endPoint: "http://localhost:8085/",
+        //app_endPoint: "http://localhost:5500/",
   
         // Manage Project
         manage_project_add: "manage-project/new",
@@ -12,7 +12,7 @@ sap.ui.define([], function () {
   
         //Manage Object
         manage_object_add: "manage-object/new-object",
-        manage_object_all: "manage-object/all-object",
+        manage_object_all: "/api/employees/all-object",
         manage_object_byid: "manage-object/{id}",
   
         // ManageWorkflowUser

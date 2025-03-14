@@ -4,14 +4,16 @@ sap.ui.define([
 	"sap/ui/model/FilterOperator",
 	"sap/ui/model/Sorter",
 	"sap/m/ViewSettingsDialog",
-	"sap/m/ViewSettingsItem"
+	"sap/m/ViewSettingsItem",
+	"demoapp/utils/URLConstants"
 ], function(
 	BaseController,
 	Filter,
 	FilterOperator,
 	Sorter,
 	ViewSettingsDialog,
-	ViewSettingsItem
+	ViewSettingsItem,
+	URLConstants
 ) {
 	"use strict";
 
@@ -26,11 +28,14 @@ sap.ui.define([
 			this._aValidSortFields = ["EmployeeID", "FirstName", "LastName"];
 			this._sSearchQuery = null;
             this._oRouterArgs = null;
-			this.fetchProjects();
+		
 			this._initViewSettingsDialog();
 
             // make the search bookmarkable
 			oRouter.getRoute("employeeOverview").attachMatched(this._onRouteMatched, this);
+			//this.fetchEmployees();
+			this.fetchEmployees = this.fetchEmployees.bind(this);
+			this.fetchEmployees();
 		},
 
 		onSortButtonPressed : function () {
@@ -138,23 +143,19 @@ sap.ui.define([
 			this._oVSD.setSelectedSortItem(sSortField);
 			this._oVSD.setSortDescending(bSortDescending);
 		},
-		fetchProjects: async function (id) {
+		fetchEmployees: async function () {
 			try {
-				this.showLoading(true);
-				var path = URLConstants.URL.manage_object_all;
-				//var path = "http://localhost:8085/api/employees/{id}";
-				let response = await this.restMethodGet(path);
-				response.forEach(e => {
-					e.status_text = e.status == "1" ? "Active" : "Inactive"
-				});
-				this.getView().setModel(new JSONModel(response), "ManageObjectsMdl");
-				this.showLoading(false);
+				this.showLoading(); // Ensure this function exists
+				let response = await fetch("http://localhost:8080/api/employees");
+				let data = await response.json();
+				this.getView().setModel(new sap.ui.model.json.JSONModel(data), "ManageObjectsMdl");
+			} catch (error) {
+				console.error("Error fetching employees:", error);
+			} finally {
+				this.showLoading();
 			}
-			catch {
-				this.showLoading(false);
-			}
-
 		}
+	
 		
 	});
 
